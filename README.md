@@ -1,8 +1,8 @@
 # MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval
 
 [![arXiv](https://img.shields.io/badge/arXiv-2506.12364-b31b1b.svg)](https://arxiv.org/abs/2506.12364)
-[![Hugging Face](https://img.shields.io/badge/huggingface-MMR5-yellow.svg)](https://huggingface.co/i2vec/MM-R5)
-[![Github](https://img.shields.io/badge/Github-MMR5-black.svg)](https://github.com/i2vec/MM-R5)
+[![Hugging Face](https://img.shields.io/badge/huggingface-MM--R5-yellow.svg)](https://huggingface.co/i2vec/MM-R5)
+[![Github](https://img.shields.io/badge/Github-MM--R5-black.svg)](https://github.com/i2vec/MM-R5)
 ****
 
 ## 📖 Table of Contents

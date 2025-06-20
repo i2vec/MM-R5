@@ -9,7 +9,7 @@
 
 - [📖 Table of Contents](#-table-of-contents)
 - [📢 News](#-news)
-- [📖 Introduction](#-introduction)
+- [📑 Introduction](#-introduction)
 - [📈 Results](#-results)
 - [🚀 Getting Started](#-getting-started)
 - [🏷️ License](#️-license)
@@ -23,7 +23,7 @@
 - **2025-06-20**: Our model [MM-R5](https://huggingface.co/i2vec/MM-R5) is now publicly available on Hugging Face!
 - **2025-06-14**: Our publication [MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval](https://arxiv.org/abs/2506.12364) is now available!
 
-## 📖 Introduction
+## 📑 Introduction
 
 We introduce **MM-R5**, a novel *Multimodal Reasoning-Enhanced ReRanker* designed to improve document retrieval in complex, multimodal settings. Unlike traditional rerankers that treat candidates as isolated inputs, MM-R5 incorporates explicit chain-of-thought reasoning across textual, visual, and structural modalities to better assess relevance. The model follows a two-stage training paradigm: during the supervised fine-tuning (SFT) stage, it is trained to produce structured reasoning chains over multimodal content. To support this, we design a principled data construction method that generates high-quality reasoning traces aligned with retrieval intent, enabling the model to learn interpretable and effective decision paths. In the second stage, reinforcement learning is applied to further optimize the reranking performance using carefully designed reward functions, including task-specific ranking accuracy and output format validity. This combination of reasoning supervision and reward-driven optimization allows MM-R5 to deliver both accurate and interpretable reranking decisions. Experiments on the MMDocIR benchmark show that MM-R5 achieves state-of-the-art top-k retrieval performance, outperforming strong unimodal and large-scale multimodal baselines in complex document understanding scenarios.
 ![overall](./assets/overall.png)

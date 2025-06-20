@@ -1,0 +1,25 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+swift sft \
+    --model YOUR_MODEL_PATH \
+    --dataset YOUR_DATASET_PATH \
+    --split_dataset_ratio 0.0 \
+    --data_seed 42 \
+    --train_type lora \
+    --lora_rank 8 \
+    --lora_alpha 32 \
+    --target_modules all-linear \
+    --lorap_lr_ratio 16 \
+    --torch_dtype bfloat16 \
+    --num_train_epochs 1 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --learning_rate 1e-4 \
+    --freeze_vit true \
+    --gradient_accumulation_steps 4 \
+    --save_steps 100 \
+    --logging_steps 5 \
+    --max_length 32768 \
+    --output_dir output \
+    --attn_impl flash_attn \
+    --warmup_ratio 0.05 \
+    --dataloader_num_workers 16

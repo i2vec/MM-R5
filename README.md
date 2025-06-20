@@ -5,29 +5,31 @@
 [![Github](https://img.shields.io/badge/Github-MMR5-black.svg)](https://github.com/i2vec/MM-R5)
 ****
 
-# 📖 Table of Contents
+## 📖 Table of Contents
+
 - [📖 Table of Contents](#-table-of-contents)
 - [📢 News](#-news)
-- [📖 Introduction](#-Introduction)
-- [📊 Resulsts](#-results)
+- [📖 Introduction](#-introduction)
+- [📈 Results](#-results)
 - [🚀 Getting Started](#-getting-started)
 - [🏷️ License](#️-license)
 - [🖋️ Citation](#️-citation)
 - [❤️ Acknowledgements](#️-acknowledgements)
+- [⭐ Star History](#-star-history)
 
+## 📢 News
 
-
-
-# 📢 News
 - **Future**: Data construction pipeline and training code is on the way...
 - **2025-06-20**: Our model [MM-R5](https://huggingface.co/i2vec/MM-R5) is now publicly available on Hugging Face!
 - **2025-06-14**: Our publication [MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval](https://arxiv.org/abs/2506.12364) is now available!
 
-# 📖 Introduction
-We introduce **MM-R5**, a novel *Multimodal Reasoning-Enhanced ReRanker* designed to improve document retrieval in complex, multimodal settings. Unlike traditional rerankers that treat candidates as isolated inputs, MM-R5 incorporates explicit chain-of-thought reasoning across textual, visual, and structural modalities to better assess relevance. The model follows a two-stage training paradigm: during the supervised fine-tuning (SFT) stage, it is trained to produce structured reasoning chains over multimodal content. To support this, we design a principled data construction method that generates high-quality reasoning traces aligned with retrieval intent, enabling the model to learn interpretable and effective decision paths. In the second stage, reinforcement learning is applied to further optimize the reranking performance using carefully designed reward functions, including task-specific ranking accuracy and output format validity. This combination of reasoning supervision and reward-driven optimization allows MM-R5 to deliver both accurate and interpretable reranking decisions. Experiments on the MMDocIR benchmark show that MM-R5 achieves state-of-the-art top-k retrieval performance, outperforming strong unimodal and large-scale multimodal baselines in complex document understanding scenarios.
-![](./assets/overall.png)
+## 📖 Introduction
 
-# 📈 Results
+We introduce **MM-R5**, a novel *Multimodal Reasoning-Enhanced ReRanker* designed to improve document retrieval in complex, multimodal settings. Unlike traditional rerankers that treat candidates as isolated inputs, MM-R5 incorporates explicit chain-of-thought reasoning across textual, visual, and structural modalities to better assess relevance. The model follows a two-stage training paradigm: during the supervised fine-tuning (SFT) stage, it is trained to produce structured reasoning chains over multimodal content. To support this, we design a principled data construction method that generates high-quality reasoning traces aligned with retrieval intent, enabling the model to learn interpretable and effective decision paths. In the second stage, reinforcement learning is applied to further optimize the reranking performance using carefully designed reward functions, including task-specific ranking accuracy and output format validity. This combination of reasoning supervision and reward-driven optimization allows MM-R5 to deliver both accurate and interpretable reranking decisions. Experiments on the MMDocIR benchmark show that MM-R5 achieves state-of-the-art top-k retrieval performance, outperforming strong unimodal and large-scale multimodal baselines in complex document understanding scenarios.
+![overall](./assets/overall.png)
+
+## 📈 Results
+
 Our method, MM-R5, consistently achieves SoTA performance across most evaluation
 metrics, including both macro and micro recall at different
 thresholds. Compared with all retriever-only methods, MMR5 brings significant improvements, for instance, compared
@@ -40,8 +42,10 @@ Across all retrievers and evaluation metrics, applying MM-R5 consistently improv
 and micro recall.
 ![experiments2](./assets/experiments2.png)
 
-# 🚀 Getting Started
+## 🚀 Getting Started
+
 You can get the reranker from [here](https://github.com/i2vec/MM-R5/blob/main/examples/reranker.py)
+
 ```python
 from reranker import QueryReranker
 
@@ -62,12 +66,14 @@ print(f"Query: {query}")
 print(f"Reranked order: {predicted_order}")
 ```
 
+## 🏷️ License
 
-# 🏷️ License
 This repository is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
-# 🖋️ Citation
+## 🖋️ Citation
+
 If you use MM-R5 in your research, please cite our project:
+
 ```bibtex
 
 @article{xu2025mm,
@@ -78,12 +84,13 @@ If you use MM-R5 in your research, please cite our project:
 }
 ```
 
-# ❤️ Acknowledgements
+## ❤️ Acknowledgements
+
 This project benefits from the following open-source projects:
+
 - [SWIFT](https://github.com/modelscope/ms-swift)
 - [VLM-R1](https://github.com/om-ai-lab/VLM-R1)
 
-
-## Star History
+## ⭐ Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=i2vec/MM-R5&type=Date)](https://www.star-history.com/#i2vec/MM-R5&Date)

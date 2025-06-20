@@ -19,6 +19,7 @@
 
 
 # 📢 News
+- **Future**: Data construction pipeline and training code is on the way...
 - **2025-06-20**: Our model [MM-R5](https://huggingface.co/i2vec/MM-R5) is now publicly available on Hugging Face!
 - **2025-06-14**: Our publication [MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval](https://arxiv.org/abs/2506.12364) is now available!
 

@@ -82,3 +82,8 @@ If you use MM-R5 in your research, please cite our project:
 This project benefits from the following open-source projects:
 - [SWIFT](https://github.com/modelscope/ms-swift)
 - [VLM-R1](https://github.com/om-ai-lab/VLM-R1)
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=i2vec/MM-R5&type=Date)](https://www.star-history.com/#i2vec/MM-R5&Date)

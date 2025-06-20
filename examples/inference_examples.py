@@ -3,7 +3,7 @@ from reranker import QueryReranker
 model_path = "/path/to/model"
 reranker = QueryReranker(model_path=model_path)
 
-# 测试数据
+# Test data
 query = "What is the financial benefit of the partnership?"
 image_list = [
     "/path/to/images/image1.png", 
@@ -13,7 +13,7 @@ image_list = [
     "/path/to/images/image5.png"
 ]
 
-# 执行重排序
+# Execute reranking
 predicted_order = reranker.rerank(query, image_list)
 
 print(f"Query: {query}")

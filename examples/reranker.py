@@ -25,15 +25,15 @@ question_template = (
 
 class QueryReranker:
     """
-    通用查询重排器，支持任意模型进行图像重排序
+    Universal query reranker that supports any model for image reranking
     """
     
     def __init__(self, model_path: str):
         """
-        初始化重排器
+        Initialize the reranker
         
         Args:
-            model_path: 模型路径
+            model_path: Model path
         """
         self.model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
             model_path,
@@ -46,14 +46,14 @@ class QueryReranker:
         
     def rerank(self, query: str, image_list: List[str]) -> List[int]:
         """
-        对查询结果进行重排序
+        Rerank query results
         
         Args:
-            query: 查询文本
-            image_list: 图像路径列表
+            query: Query text
+            image_list: List of image paths
             
         Returns:
-            List[int]: 重排序后的索引列表
+            List[int]: Reranked index list
         """
         device = self.model.device
         
@@ -82,7 +82,7 @@ class QueryReranker:
             },
         ]
         
-        # 添加图像到消息中
+        # Add images to messages
         for i, image_path in enumerate(image_list):
             messages[-1]["content"].extend(
                 [
@@ -123,7 +123,7 @@ class QueryReranker:
             generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
         )[0]
         
-        # 解析输出结果
+        # Parse output results
         match = re.search(r'<answer>\[(.*?)\]</answer>', output_text)
         
         if match:
@@ -137,14 +137,14 @@ class QueryReranker:
                         
                 predicted_order = tmp_predicted_order
                 
-                # 处理缺失的索引
+                # Handle missing indices
                 if len(set(predicted_order)) < len(image_list):
                     missing_ids = set(range(len(image_list))) - set(predicted_order)
                     predicted_order.extend(sorted(list(missing_ids)))
                     
             except Exception as e:
                 predicted_order = [i for i in range(len(image_list))]
-                print(f"解析错误: {str(e)}, 输出文本: {output_text}")
+                print(f"Parsing error: {str(e)}, output text: {output_text}")
         else:
             predicted_order = [i for i in range(len(image_list))]
             

@@ -19,7 +19,7 @@
 
 ## 📢 News
 
-- **Future**: Data construction pipeline and training code is on the way...
+- **2025-06-22**: We released the data construction pipeline and the RL implementation code. Data construction pipeline has been released and can be found [here](./src/sft/gpt4o_cot.py), and the RL reward implementation can be found [here](./src/rl/VLM-R1/src/open-r1-multimodal/src/open_r1/vlm_modules/vlm_module.py).
 - **2025-06-20**: Our model [MM-R5](https://huggingface.co/i2vec/MM-R5) is now publicly available on Hugging Face!
 - **2025-06-14**: Our publication [MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval](https://arxiv.org/abs/2506.12364) is now available!
 
@@ -44,7 +44,7 @@ and micro recall.
 
 ## 🚀 Getting Started
 
-You can get the reranker from [here](https://github.com/i2vec/MM-R5/blob/main/examples/reranker.py)
+You can get the reranker from [here](./examples/reranker.py)
 
 ```python
 from reranker import QueryReranker
